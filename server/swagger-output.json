@@ -1,0 +1,193 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Scheduling API",
+    "version": "1.0.0",
+    "description": "API para o sistema de agendamentos de salão de beleza"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/v1/clients": {
+      "post": {
+        "tags": [
+          "Clients"
+        ],
+        "summary": "Cadastrar um novo cliente",
+        "description": "Atualiza o cliente passado como parâmetro no corpo da requisição",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Criado"
+          },
+          "204": {
+            "description": "Nenhum Conteúdo"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Clients"
+        ],
+        "summary": "Atualizar um cliente",
+        "description": "Atualiza o cliente passado como parâmetro no corpo da requisição",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "Nenhum Conteúdo"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Clients"
+        ],
+        "summary": "Obter uma lista de clientes",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/clients/{id}": {
+      "delete": {
+        "tags": [
+          "Clients"
+        ],
+        "summary": "Deletar um cliente pelo ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Nenhum Conteúdo"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Clients"
+        ],
+        "summary": "Obter um cliente pelo ID",
+        "description": "Retorna o cliente relacionado ao ID informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/schedulings": {
+      "post": {
+        "tags": [
+          "Schedulings"
+        ],
+        "summary": "Cadastrar um novo agendamento",
+        "description": "Atualiza o agendamento passado como parâmetro no corpo da requisição",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "201": {
+            "description": "Criado"
+          },
+          "204": {
+            "description": "Nenhum Conteúdo"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Schedulings"
+        ],
+        "summary": "Atualizar um agendamento",
+        "description": "Atualiza o agendamento passado como parâmetro no corpo da requisição",
+        "parameters": [],
+        "responses": {
+          "204": {
+            "description": "Nenhum Conteúdo"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Schedulings"
+        ],
+        "summary": "Obter uma lista de agendamentos",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/v1/schedulings/{id}": {
+      "delete": {
+        "tags": [
+          "Schedulings"
+        ],
+        "summary": "Deletar um agendamento pelo ID",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Nenhum Conteúdo"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Schedulings"
+        ],
+        "summary": "Obter um agendamento pelo ID",
+        "description": "Retorna um agendamento relacionado ao ID informado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    volumes:
+      - ./db/data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    env_file: ./.env
+    environment:
+      - MYSQL_DATABASE=$DB_NAME
+      - MYSQL_ROOT_PASSWORD=$DB_PASSWORD
+  server:
+    build: .
+    command: bash -c "npx knex migrate:latest && npm start"
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/app
+    depends_on:
+      - db
+    env_file: ./.env
+volumes:
+  db:
+  server:
