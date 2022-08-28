@@ -16,7 +16,9 @@ const app = express()
 
 app.use(cors())
 app.use(express.json())
+
 app.use('/doc', swaggerUI.serve, swaggerUI.setup(swaggerFile))
+app.use(express.static('public'))
 app.use(clientsRoutes)
 app.use(schedulingRoutes)
 app.use(errorHandlerMiddleware)
